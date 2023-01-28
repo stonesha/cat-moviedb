@@ -36,6 +36,7 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@tailwindcss/aspect-ratio": "^0.4.2",
 		"@trpc/client": "^10.9.0",
 		"@trpc/server": "^10.9.0",
 		"trpc-sveltekit": "^3.2.5"
