@@ -38,6 +38,7 @@
 	"dependencies": {
 		"@trpc/client": "^10.9.0",
 		"@trpc/server": "^10.9.0",
+		"date-fns": "^2.29.3",
 		"trpc-sveltekit": "^3.2.5"
 	}
 }
