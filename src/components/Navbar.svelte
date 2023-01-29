@@ -5,14 +5,14 @@
 	const mobile_menu = createDisclosure({ label: 'Mobile Menu', expanded: false });
 </script>
 
-<nav class="bg-gray-800">
+<nav class="bg-transparent">
 	<div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
 		<div class="relative flex h-16 items-center justify-between">
 			<div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
 				<!-- Mobile menu button-->
 				<button
 					type="button"
-					class="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
+					class="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-slate-300 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
 					aria-controls="mobile-menu"
 					aria-expanded="false"
 					use:mobile_menu.button
@@ -50,14 +50,14 @@
 				</button>
 			</div>
 			<div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
-				<a class="flex flex-shrink-0 items-center text-white font-bold" href="/">cat-moviedb</a>
+				<a class="flex flex-shrink-0 items-center text-slate-700 font-bold" href="/">cat-moviedb</a>
 				<div class="hidden sm:ml-6 sm:block">
 					<div class="flex space-x-4">
 						<a
 							href="/"
 							class={`${
-								$page.route.id === '/' ? 'bg-gray-900' : 'hover:bg-gray-700 hover:text-white'
-							} text-white px-3 py-2 rounded-md text-sm font-medium`}
+								$page.route.id === '/' ? 'bg-slate-200' : 'hover:bg-slate-100 hover:text-slate-900'
+							} text-slate-700 px-3 py-2 rounded-md text-sm font-medium`}
 							aria-current="page">Home</a
 						>
 
@@ -65,27 +65,27 @@
 							href="/movies"
 							class={`${
 								$page.route.id?.includes('/movies')
-									? 'bg-gray-900'
-									: 'hover:bg-gray-700 hover:text-white'
-							} text-white px-3 py-2 rounded-md text-sm font-medium`}>Movies</a
+									? 'bg-slate-200'
+									: 'hover:bg-slate-100 hover:text-slate-900'
+							} text-slate-700 px-3 py-2 rounded-md text-sm font-medium`}>Movies</a
 						>
 
 						<a
 							href="/tv-shows"
 							class={`${
 								$page.route.id?.includes('/tv-shows')
-									? 'bg-gray-900'
-									: 'hover:bg-gray-700 hover:text-white'
-							} text-white px-3 py-2 rounded-md text-sm font-medium`}>TV Shows</a
+									? 'bg-slate-100'
+									: 'hover:bg-slate-100 hover:text-slate-900'
+							} text-slate-700 px-3 py-2 rounded-md text-sm font-medium`}>TV Shows</a
 						>
 
 						<a
 							href="/people"
 							class={`${
 								$page.route.id?.includes('/people')
-									? 'bg-gray-900'
-									: 'hover:bg-gray-700 hover:text-white'
-							} text-white px-3 py-2 rounded-md text-sm font-medium`}>People</a
+									? 'bg-slate-100'
+									: 'hover:bg-slate-100 hover:text-slate-900'
+							} text-slate-700 px-3 py-2 rounded-md text-sm font-medium`}>People</a
 						>
 					</div>
 				</div>
@@ -99,10 +99,8 @@
 				<a
 					href="/"
 					class={`${
-						$page.route.id === '/'
-							? 'bg-gray-900 text-white'
-							: 'hover:bg-gray-700 hover:text-white text-gray-300'
-					} block px-3 py-2 rounded-md text-base font-medium`}
+						$page.route.id === '/' ? 'bg-slate-100' : 'hover:bg-slate-100 hover:text-slate-900'
+					} text-slate-700 block px-3 py-2 rounded-md text-base font-medium`}
 					aria-current="page">Home</a
 				>
 
@@ -110,27 +108,27 @@
 					href="/movies"
 					class={`${
 						$page.route.id?.includes('/movies')
-							? 'bg-gray-900 text-white'
-							: 'hover:bg-gray-700 hover:text-white text-gray-300'
-					} block px-3 py-2 rounded-md text-base font-medium`}>Movies</a
+							? 'bg-slate-100'
+							: 'hover:bg-slate-100 hover:text-slate-900'
+					} text-slate-700 block px-3 py-2 rounded-md text-base font-medium`}>Movies</a
 				>
 
 				<a
 					href="/tv-shows"
 					class={`${
 						$page.route.id?.includes('/tv-shows')
-							? 'bg-gray-900 text-white'
-							: 'hover:bg-gray-700 hover:text-white text-gray-300'
-					} block px-3 py-2 rounded-md text-base font-medium`}>TV Shows</a
+							? 'bg-slate-100'
+							: 'hover:bg-slate-100 hover:text-slate-900'
+					} text-slate-700 block px-3 py-2 rounded-md text-base font-medium`}>TV Shows</a
 				>
 
 				<a
 					href="/people"
 					class={`${
 						$page.route.id?.includes('/people')
-							? 'bg-gray-900 text-white'
-							: 'hover:bg-gray-700 hover:text-white text-gray-300'
-					} block px-3 py-2 rounded-md text-base font-medium`}>People</a
+							? 'bg-slate-100'
+							: 'hover:bg-slate-100 hover:text-slate-900'
+					} text-slate-700 block px-3 py-2 rounded-md text-base font-medium`}>People</a
 				>
 			</div>
 		</div>

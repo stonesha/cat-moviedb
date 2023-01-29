@@ -1,57 +1,43 @@
-<script lang="ts">
-	import type { PageServerData } from './$types';
-	import { format, parseISO } from 'date-fns';
-
-	export let data: PageServerData;
-	let { popular_movies, movie_genres } = data;
-	$: ({ popular_movies, movie_genres } = data);
-
-	const IMAGE_URL = 'https://image.tmdb.org/t/p/w500';
-</script>
-
-<div class="bg-white">
-	<div class="mx-auto max-w-2xl py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
-		<h2 class="sr-only">Movies</h2>
-
+<main>
+	<div class="relative px-6 lg:px-8">
+		<div class="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
+			<div class="text-center">
+				<h1 class="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
+					View information about your favorite media.
+				</h1>
+				<p class="mt-6 text-lg leading-8 text-gray-600">
+					Trust cat-moviedb to bring you the latest and greatest media information relating to
+					movies, TV shows, and people in them.
+				</p>
+			</div>
+		</div>
 		<div
-			class="grid grid-cols-1 gap-y-4 sm:grid-cols-2 sm:gap-x-6 sm:gap-y-10 lg:grid-cols-3 lg:gap-x-8"
+			class="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]"
 		>
-			{#each popular_movies.results as movie}
-				<div
-					class="group relative flex flex-col overflow-hidden rounded-lg border border-gray-200 bg-white"
-				>
-					<div class="bg-gray-200 group-hover:opacity-75">
-						<img
-							src={`${IMAGE_URL}${movie.poster_path}`}
-							alt={`${movie.original_title} poster`}
-							class="h-full w-full object-cover object-center sm:h-full sm:w-full"
-						/>
-					</div>
-					<div class="flex flex-1 flex-col space-y-2 p-4">
-						<h3 class="text-md font-medium text-gray-900">
-							<a href={`/movie/${movie.id}`}>
-								<span aria-hidden="true" class="absolute inset-0" />
-								{movie.original_title}
-							</a>
-						</h3>
-						<p class="text-sm text-gray-500">
-							{movie.overview}
-						</p>
-						<div class="flex flex-1 flex-col justify-end">
-							<p class="text-sm italic text-gray-500">
-								{format(parseISO(movie.release_date), 'MM/dd/yyyy')}
-							</p>
-							<div class="flex flex-row flex-wrap">
-								{#each movie.genre_ids as genre_id}
-									<p class="text-base font-medium text-gray-900 m-1">
-										{movie_genres[genre_id]}
-									</p>
-								{/each}
-							</div>
-						</div>
-					</div>
-				</div>
-			{/each}
+			<svg
+				class="relative left-[calc(50%+3rem)] h-[21.1875rem] max-w-none -translate-x-1/2 sm:left-[calc(50%+36rem)] sm:h-[42.375rem]"
+				viewBox="0 0 1155 678"
+				xmlns="http://www.w3.org/2000/svg"
+			>
+				<path
+					fill="url(#ecb5b0c9-546c-4772-8c71-4d3f06d544bc)"
+					fill-opacity=".3"
+					d="M317.219 518.975L203.852 678 0 438.341l317.219 80.634 204.172-286.402c1.307 132.337 45.083 346.658 209.733 145.248C936.936 126.058 882.053-94.234 1031.02 41.331c119.18 108.451 130.68 295.337 121.53 375.223L855 299l21.173 362.054-558.954-142.079z"
+				/>
+				<defs>
+					<linearGradient
+						id="ecb5b0c9-546c-4772-8c71-4d3f06d544bc"
+						x1="1155.49"
+						x2="-78.208"
+						y1=".177"
+						y2="474.645"
+						gradientUnits="userSpaceOnUse"
+					>
+						<stop stop-color="#9089FC" />
+						<stop offset="1" stop-color="#FF80B5" />
+					</linearGradient>
+				</defs>
+			</svg>
 		</div>
 	</div>
-</div>
+</main>
