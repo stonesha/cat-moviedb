@@ -1,7 +1,7 @@
 import type { Context } from '$lib/trpc/context';
 import { initTRPC } from '@trpc/server';
 import { MOVIEDB_API_KEY } from '$env/static/private';
-import type { MovieDbResponse } from '$lib/types';
+import type { MovieDbResponse, TvDbResponse } from '$lib/types';
 
 export const t = initTRPC.context<Context>().create();
 
@@ -17,6 +17,25 @@ export const router = t.router({
 	movie_genres: t.procedure.query(async () => {
 		const response: { genres: { id: number; name: string }[] } = await fetch(
 			`${MOVIEDB_API_URL}/genre/movie/list?api_key=${MOVIEDB_API_KEY}&language=en-US`
+		).then((res) => res.json());
+
+		const genres: { [key: number]: string } = {};
+
+		response.genres.map((genre) => {
+			genres[genre.id] = genre.name;
+		});
+
+		return genres;
+	}),
+	popular_tv_shows: t.procedure.query(async () => {
+		const response: TvDbResponse = await fetch(
+			`${MOVIEDB_API_URL}/tv/popular?api_key=${MOVIEDB_API_KEY}&language=en-US&page=1`
+		).then((res) => res.json());
+		return response;
+	}),
+	tv_show_genres: t.procedure.query(async () => {
+		const response: { genres: { id: number; name: string }[] } = await fetch(
+			`${MOVIEDB_API_URL}/genre/tv/list?api_key=${MOVIEDB_API_KEY}&language=en-US`
 		).then((res) => res.json());
 
 		const genres: { [key: number]: string } = {};
