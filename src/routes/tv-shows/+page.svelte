@@ -9,6 +9,10 @@
 	const IMAGE_URL = 'https://image.tmdb.org/t/p/w500';
 </script>
 
+<svelte:head>
+	<title>cat-moviedb | TV Shows</title>
+</svelte:head>
+
 <div class="mx-auto max-w-2xl py-16 px-4 sm:py-5 sm:px-6 lg:max-w-7xl lg:px-8">
 	<div class="min-w-0 flex-1">
 		<h2
