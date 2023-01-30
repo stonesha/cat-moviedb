@@ -23,7 +23,7 @@
 	>
 		{#each popular_tv_shows.results as tv_show}
 			<div
-				class="group relative flex flex-col overflow-hidden rounded-lg border border-gray-200 bg-white"
+				class="group relative flex flex-col overflow-hidden rounded-lg border border-gray-200 bg-white shadow-md"
 			>
 				<div class="bg-gray-200 group-hover:opacity-75">
 					<img
