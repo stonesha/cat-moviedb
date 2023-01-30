@@ -25,7 +25,7 @@
 			<div
 				class="group relative flex flex-col overflow-hidden rounded-lg border border-gray-200 bg-white shadow-md"
 			>
-				<div class="bg-gray-200 group-hover:opacity-75">
+				<div class="bg-gray-200 group-hover:opacity-75 h-full md:h-[30rem]">
 					<img
 						src={`${IMAGE_URL}${tv_show.poster_path}`}
 						alt={`${tv_show.name} poster`}
