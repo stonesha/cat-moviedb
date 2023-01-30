@@ -1,7 +1,7 @@
 import type { Context } from '$lib/trpc/context';
 import { initTRPC } from '@trpc/server';
 import { MOVIEDB_API_KEY } from '$env/static/private';
-import type { MovieDbResponse, TvDbResponse } from '$lib/types';
+import type { MovieDbResponse, TvDbResponse, PeopleDbResponse } from '$lib/types';
 
 export const t = initTRPC.context<Context>().create();
 
@@ -45,6 +45,13 @@ export const router = t.router({
 		});
 
 		return genres;
+	}),
+	popular_people: t.procedure.query(async () => {
+		const response: PeopleDbResponse = await fetch(
+			`${MOVIEDB_API_URL}/person/popular?api_key=${MOVIEDB_API_KEY}&language=en-US`
+		).then((res) => res.json());
+
+		return response;
 	})
 });
 
