@@ -38,7 +38,7 @@
 				</div>
 				<div class="flex flex-1 flex-col space-y-2 p-4">
 					<h3 class="text-md font-medium text-gray-900">
-						<a href={`/movie/${tv_show.id}`}>
+						<a href={`/tv-shows/${tv_show.id}`}>
 							<span aria-hidden="true" class="absolute inset-0" />
 							{tv_show.name}
 						</a>
