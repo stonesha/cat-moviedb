@@ -1,4 +1,4 @@
-<div class="min-h-full bg-white py-16 px-6 sm:py-24 md:grid md:place-items-center lg:px-8">
+<div class="min-h-full bg-transparent py-16 px-6 sm:py-24 md:grid md:place-items-center lg:px-8">
 	<div class="mx-auto max-w-max">
 		<main class="sm:flex">
 			<p class="text-4xl font-bold tracking-tight text-indigo-600 sm:text-5xl">404</p>
