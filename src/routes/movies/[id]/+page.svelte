@@ -9,8 +9,6 @@
 	$: ({ movie, movie_genres } = data);
 
 	const IMAGE_URL = 'https://image.tmdb.org/t/p/w600_and_h900_bestv2/';
-
-	console.log(movie);
 </script>
 
 <svelte:head>
