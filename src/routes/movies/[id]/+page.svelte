@@ -40,8 +40,9 @@
 		<div class="mx-auto mt-8 max-w-2xl px-4 sm:px-6 lg:max-w-7xl lg:px-8">
 			<div class="lg:grid lg:auto-rows-min lg:grid-cols-12 lg:gap-x-8">
 				<div class="lg:col-span-5 lg:col-start-8">
-					<div class="flex justify-between">
+					<div class="flex flex-col md:flex-row justify-between">
 						<h1 class="text-xl font-medium text-gray-900">{movie.title}</h1>
+						<hr class="block md:hidden" />
 						<p class="text-xl font-medium text-gray-900">
 							{format(parseISO(movie.release_date), 'MM/dd/yyyy')}
 						</p>
@@ -49,7 +50,7 @@
 					<!-- Reviews -->
 					<div class="mt-4">
 						<h2 class="sr-only">Reviews</h2>
-						<div class="flex items-center">
+						<div class="flex flex-col md:flex-row items-center">
 							<p class="text-sm text-gray-700">
 								{movie.vote_average.toFixed(1)}
 								<span class="sr-only"> out of 10 stars</span>
