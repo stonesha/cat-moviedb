@@ -19,6 +19,7 @@ specifiers:
   svelte: ^3.54.0
   svelte-check: ^3.0.1
   svelte-headlessui: ^0.0.14
+  svelte-star-rating: ^2.0.1
   svelte-transition: ^0.0.7
   tailwindcss: ^3.2.4
   trpc-sveltekit: ^3.2.5
@@ -26,14 +27,17 @@ specifiers:
   typescript: ^4.9.3
   vite: ^4.0.0
   vitest: ^0.25.3
+  zod: ^3.20.6
 
 dependencies:
   '@trpc/client': 10.9.0_@trpc+server@10.9.0
   '@trpc/server': 10.9.0
   date-fns: 2.29.3
   svelte-headlessui: 0.0.14
+  svelte-star-rating: 2.0.1
   svelte-transition: 0.0.7
   trpc-sveltekit: 3.2.5
+  zod: 3.20.6
 
 devDependencies:
   '@playwright/test': 1.30.0
@@ -1937,6 +1941,10 @@ packages:
       typescript: 4.9.4
     dev: true
 
+  /svelte-star-rating/2.0.1:
+    resolution: {integrity: sha512-bURPn91T+uBCi4XXdh2eE0k2sCILcJrfb8NfKOBfpVbOJYjTfWllBtSKQMoXRnXwRmgx/52HC87ziG1KTywkFg==}
+    dev: false
+
   /svelte-transition/0.0.7:
     resolution: {integrity: sha512-YMbl+eIkzeYKBz6E/I8KI8RMezhqB38t2B/Mx8BotmtiN+5wnKath7CWDc+8U9zKGJ/iUYHmx4MwQjIzo05nVg==}
     dev: false
@@ -2251,3 +2259,7 @@ packages:
     resolution: {integrity: sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==}
     engines: {node: '>=10'}
     dev: true
+
+  /zod/3.20.6:
+    resolution: {integrity: sha512-oyu0m54SGCtzh6EClBVqDDlAYRz4jrVtKwQ7ZnsEmMI9HnzuZFj8QFwAY1M5uniIYACdGvv0PBWPF2kO0aNofA==}
+    dev: false
