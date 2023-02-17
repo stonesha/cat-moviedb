@@ -61,6 +61,7 @@
 									<StarRating rating={tv_show.vote_average - 5} />
 								{:else}
 									<StarRating rating={tv_show.vote_average} />
+									<StarRating rating={0} />
 								{/if}
 							</div>
 							<div aria-hidden="true" class="ml-4 text-sm text-gray-300">·</div>
