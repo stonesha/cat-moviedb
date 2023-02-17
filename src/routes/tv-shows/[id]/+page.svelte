@@ -30,7 +30,7 @@
 
 				<li>
 					<div class="flex items-center">
-						<a href={`/movies/${$page.params.id}`} class="mr-4 text-sm font-medium text-gray-900"
+						<a href={`/tv-shows/${$page.params.id}`} class="mr-4 text-sm font-medium text-gray-900"
 							>{tv_show.name}</a
 						>
 					</div>
