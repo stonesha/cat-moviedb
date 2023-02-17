@@ -6,7 +6,8 @@ import type {
 	PopularPeopleResponse,
 	PopularTvShowResponse,
 	MovieResponse,
-	TvShowResponse
+	TvShowResponse,
+	PeopleResponse
 } from '$lib/types';
 import { z } from 'zod';
 
@@ -72,6 +73,10 @@ export const router = t.router({
 
 		return response;
 	}),
+	get_person: t.procedure.input(z.string()).query(async ({ input }) => {
+		const response: PeopleResponse = await fetch(
+			`${MOVIEDB_API_URL}/person/${input}?api_key=${MOVIEDB_API_KEY}&language=en-US`
+		).then((res) => res.json());
 		return response;
 	})
 });

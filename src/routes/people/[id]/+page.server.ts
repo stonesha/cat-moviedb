@@ -1,20 +1,20 @@
 import { createContext } from '$lib/trpc/context';
 import { router } from '$lib/trpc/router';
 import type { PageServerLoad } from './$types';
-import type { PopularPeopleResponse } from '$lib/types';
+import type { PeopleResponse } from '$lib/types';
 
 type OutputType = {
-	popular_people: Promise<PopularPeopleResponse>;
+	person: Promise<PeopleResponse>;
 };
 
-// 👇 since this is only called on the server, we can bypass HTTP 💡
 export const load: PageServerLoad<OutputType> = async (event) => {
-	// cache page data for an hour
 	event.setHeaders({
 		'cache-control': 'public, max-age=3600'
 	});
 
+	const id = event.params.id;
+
 	return {
-		popular_people: router.createCaller(await createContext(event)).popular_people()
+		person: router.createCaller(await createContext(event)).get_person(id)
 	};
 };
