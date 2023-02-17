@@ -68,7 +68,7 @@ export type MovieResponse = {
 	vote_count: number;
 };
 
-export type TvDbResponse = {
+export type TvShowResponse = {
 	page: number;
 	results: {
 		backdrop_path: null | string;
@@ -89,7 +89,7 @@ export type TvDbResponse = {
 	total_results: number;
 };
 
-export type PeopleDbResponse = {
+export type PeopleResponse = {
 	page: number;
 	results: {
 		adult: boolean;

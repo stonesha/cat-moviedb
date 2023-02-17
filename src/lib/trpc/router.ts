@@ -3,8 +3,8 @@ import { initTRPC } from '@trpc/server';
 import { MOVIEDB_API_KEY } from '$env/static/private';
 import type {
 	PopularMoviesResponse,
-	TvDbResponse,
-	PeopleDbResponse,
+	PeopleResponse,
+	TvShowResponse,
 	MovieResponse
 } from '$lib/types';
 import { z } from 'zod';
@@ -40,7 +40,7 @@ export const router = t.router({
 		return genres;
 	}),
 	popular_tv_shows: t.procedure.query(async () => {
-		const response: TvDbResponse = await fetch(
+		const response: TvShowResponse = await fetch(
 			`${MOVIEDB_API_URL}/tv/popular?api_key=${MOVIEDB_API_KEY}&language=en-US&page=1`
 		).then((res) => res.json());
 		return response;
@@ -59,7 +59,7 @@ export const router = t.router({
 		return genres;
 	}),
 	popular_people: t.procedure.query(async () => {
-		const response: PeopleDbResponse = await fetch(
+		const response: PeopleResponse = await fetch(
 			`${MOVIEDB_API_URL}/person/popular?api_key=${MOVIEDB_API_KEY}&language=en-US`
 		).then((res) => res.json());
 

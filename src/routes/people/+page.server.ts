@@ -1,10 +1,10 @@
 import { createContext } from '$lib/trpc/context';
 import { router } from '$lib/trpc/router';
 import type { PageServerLoad } from './$types';
-import type { PeopleDbResponse } from '$lib/types';
+import type { PeopleResponse } from '$lib/types';
 
 type OutputType = {
-	popular_people: Promise<PeopleDbResponse>;
+	popular_people: Promise<PeopleResponse>;
 };
 
 // 👇 since this is only called on the server, we can bypass HTTP 💡
