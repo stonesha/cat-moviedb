@@ -51,18 +51,20 @@
 					<div class="mt-4">
 						<h2 class="sr-only">Reviews</h2>
 						<div class="flex flex-col md:flex-row items-center">
-							<p class="text-sm text-gray-700">
-								{movie.vote_average.toFixed(1)}
-								<span class="sr-only"> out of 10 stars</span>
-							</p>
-							<div class="flex flex-row items-center ml-1 mt-2">
-								{#if movie.vote_average > 5}
-									<StarRating rating={5} />
-									<StarRating rating={movie.vote_average - 5} />
-								{:else}
-									<StarRating rating={movie.vote_average} />
-									<StarRating rating={0} />
-								{/if}
+							<div class="flex flex-row items-center">
+								<p class="text-sm text-gray-700">
+									{movie.vote_average.toFixed(1)}
+									<span class="sr-only"> out of 10 stars</span>
+								</p>
+								<div class="flex flex-row items-center ml-1 mt-2">
+									{#if movie.vote_average > 5}
+										<StarRating rating={5} />
+										<StarRating rating={movie.vote_average - 5} />
+									{:else}
+										<StarRating rating={movie.vote_average} />
+										<StarRating rating={0} />
+									{/if}
+								</div>
 							</div>
 							<div aria-hidden="true" class="ml-4 text-sm text-gray-300">·</div>
 							<div class="ml-4 flex">
