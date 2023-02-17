@@ -4,8 +4,9 @@ import { MOVIEDB_API_KEY } from '$env/static/private';
 import type {
 	PopularMoviesResponse,
 	PeopleResponse,
-	TvShowResponse,
-	MovieResponse
+	PopularTvShowResponse,
+	MovieResponse,
+	TvShowResponse
 } from '$lib/types';
 import { z } from 'zod';
 
@@ -22,7 +23,7 @@ export const router = t.router({
 	}),
 	get_movie: t.procedure.input(z.string()).query(async ({ input }) => {
 		const response: MovieResponse = await fetch(
-			`${MOVIEDB_API_URL}/movie/${input}?api_key=${MOVIEDB_API_KEY}&language=en-US&page=1`
+			`${MOVIEDB_API_URL}/movie/${input}?api_key=${MOVIEDB_API_KEY}&language=en-US`
 		).then((res) => res.json());
 		return response;
 	}),
@@ -40,8 +41,14 @@ export const router = t.router({
 		return genres;
 	}),
 	popular_tv_shows: t.procedure.query(async () => {
-		const response: TvShowResponse = await fetch(
+		const response: PopularTvShowResponse = await fetch(
 			`${MOVIEDB_API_URL}/tv/popular?api_key=${MOVIEDB_API_KEY}&language=en-US&page=1`
+		).then((res) => res.json());
+		return response;
+	}),
+	get_tv_show: t.procedure.input(z.string()).query(async ({ input }) => {
+		const response: TvShowResponse = await fetch(
+			`${MOVIEDB_API_URL}/tv/${input}?api_key=${MOVIEDB_API_KEY}&language=en-US`
 		).then((res) => res.json());
 		return response;
 	}),
