@@ -21,7 +21,7 @@
 			<ol class="flex items-center space-x-4">
 				<li>
 					<div class="flex items-center">
-						<a href="/movies" class="mr-4 text-sm font-medium text-gray-900">Movies</a>
+						<a href="/movies" class="mr-4 text-sm font-medium text-gray-900">TV Shows</a>
 						<svg viewBox="0 0 6 20" aria-hidden="true" class="h-5 w-auto text-gray-300">
 							<path d="M4.878 4.34H3.551L.27 16.532h1.327l3.281-12.19z" fill="currentColor" />
 						</svg>
