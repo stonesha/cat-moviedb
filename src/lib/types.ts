@@ -184,7 +184,7 @@ export type TvShowResponse = {
 	vote_count: number;
 };
 
-export type PeopleResponse = {
+export type PopularPeopleResponse = {
 	page: number;
 	results: {
 		adult: boolean;
@@ -218,3 +218,5 @@ export type PeopleResponse = {
 	total_pages: number;
 	total_results: number;
 };
+
+export type 
