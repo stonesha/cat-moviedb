@@ -1,14 +1,12 @@
-import { createContext } from '$lib/trpc/context';
-import { router } from '$lib/trpc/router';
 import type { PageServerLoad } from './$types';
 import type { PopularMoviesResponse } from '$lib/types';
+import { get_popular_movies, get_movie_genres } from '~/lib/tmdb';
 
 type OutputType = {
-	popular_movies: Promise<PopularMoviesResponse>;
-	movie_genres: Promise<{ [key: number]: string }>;
+	popular_movies: PopularMoviesResponse;
+	movie_genres: Map<number, string>;
 };
 
-// 👇 since this is only called on the server, we can bypass HTTP 💡
 export const load: PageServerLoad<OutputType> = async (event) => {
 	// cache page data for an hour
 	event.setHeaders({
@@ -16,7 +14,7 @@ export const load: PageServerLoad<OutputType> = async (event) => {
 	});
 
 	return {
-		popular_movies: router.createCaller(await createContext(event)).popular_movies(),
-		movie_genres: router.createCaller(await createContext(event)).movie_genres()
+		popular_movies: await get_popular_movies(),
+		movie_genres: await get_movie_genres()
 	};
 };

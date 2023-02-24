@@ -1,11 +1,10 @@
-import { createContext } from '$lib/trpc/context';
-import { router } from '$lib/trpc/router';
 import type { PageServerLoad } from './$types';
 import type { MovieResponse } from '$lib/types';
+import { get_movie_by_id, get_movie_genres } from '~/lib/tmdb';
 
 type OutputType = {
-	movie: Promise<MovieResponse>;
-	movie_genres: Promise<{ [key: number]: string }>;
+	movie: MovieResponse;
+	movie_genres: Map<number, string>;
 };
 
 export const load: PageServerLoad<OutputType> = async (event) => {
@@ -16,7 +15,7 @@ export const load: PageServerLoad<OutputType> = async (event) => {
 	const id = event.params.id;
 
 	return {
-		movie: router.createCaller(await createContext(event)).get_movie(id),
-		movie_genres: router.createCaller(await createContext(event)).movie_genres()
+		movie: await get_movie_by_id(id),
+		movie_genres: await get_movie_genres()
 	};
 };
