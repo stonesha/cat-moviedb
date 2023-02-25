@@ -55,7 +55,7 @@
 						<div class="flex flex-row flex-wrap">
 							{#each tv_show.genre_ids as genre_id}
 								<p class="text-base font-medium text-gray-900 m-1">
-									{tv_show_genres[genre_id]}
+									{tv_show_genres.get(genre_id)}
 								</p>
 							{/each}
 						</div>
