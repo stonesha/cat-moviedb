@@ -186,6 +186,58 @@ export type TvShowResponse = {
 	vote_count: number;
 };
 
+export type PopularPeopleResponse = {
+	page: number;
+	results: {
+		adult: boolean;
+		gender: number;
+		id: number;
+		known_for: {
+			backdrop_path?: string;
+			first_air_date?: string;
+			genre_ids: number[];
+			id: number;
+			media_type: string;
+			name?: string;
+			origin_country?: string[];
+			original_language: string;
+			original_name?: string;
+			overview: string;
+			poster_path: string;
+			vote_average: number;
+			vote_count: number;
+			adult?: boolean;
+			original_title?: string;
+			release_date?: string;
+			title?: string;
+			video?: boolean;
+		}[];
+		known_for_department: string;
+		name: string;
+		popularity: number;
+		profile_path: string;
+	}[];
+	total_pages: number;
+	total_results: number;
+};
+
+export type PeopleResponse = {
+	adult: boolean;
+	also_known_as: string[];
+	biography: string;
+	birthday: string;
+	deathday: string;
+	gender: number;
+	homepage: string;
+	id: number;
+	imdb_id: string;
+	known_for_department: string;
+	name: string;
+	place_of_birth: string;
+	popularity: number;
+	profile_path: string;
+};
+
 const MOVIEDB_API_URL = 'https://api.themoviedb.org/3';
 
 export const get_popular_movies = async (page = 1) => {
@@ -245,4 +297,19 @@ export const get_tv_show_genres = async () => {
 	});
 
 	return tv_show_genres;
+};
+
+export const get_popular_people = async () => {
+	const popular_people: PopularPeopleResponse = await fetch(
+		`${MOVIEDB_API_URL}/person/popular?api_key=${MOVIEDB_API_KEY}&language=en-US`
+	).then((res) => res.json());
+
+	return popular_people;
+};
+
+export const get_person = async (id: string) => {
+	const response: PeopleResponse = await fetch(
+		`${MOVIEDB_API_URL}/person/${id}?api_key=${MOVIEDB_API_KEY}&language=en-US`
+	).then((res) => res.json());
+	return response;
 };
