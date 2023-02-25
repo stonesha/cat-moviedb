@@ -73,7 +73,8 @@
 							class={`${
 								$page.route.id === '/' ? 'bg-slate-200' : 'hover:bg-slate-100 hover:text-slate-900'
 							} text-slate-700 px-3 py-2 rounded-md text-sm font-medium`}
-							aria-current="page">Home</a
+							aria-current="page"
+							data-sveltekit-preload-data>Home</a
 						>
 
 						<a
@@ -82,7 +83,8 @@
 								$page.route.id?.includes('/movies')
 									? 'bg-slate-200'
 									: 'hover:bg-slate-100 hover:text-slate-900'
-							} text-slate-700 px-3 py-2 rounded-md text-sm font-medium`}>Movies</a
+							} text-slate-700 px-3 py-2 rounded-md text-sm font-medium`}
+							data-sveltekit-preload-data>Movies</a
 						>
 
 						<a
@@ -91,7 +93,8 @@
 								$page.route.id?.includes('/tv-shows')
 									? 'bg-slate-100'
 									: 'hover:bg-slate-100 hover:text-slate-900'
-							} text-slate-700 px-3 py-2 rounded-md text-sm font-medium`}>TV Shows</a
+							} text-slate-700 px-3 py-2 rounded-md text-sm font-medium`}
+							data-sveltekit-preload-data>TV Shows</a
 						>
 
 						<a
@@ -100,7 +103,8 @@
 								$page.route.id?.includes('/people')
 									? 'bg-slate-100'
 									: 'hover:bg-slate-100 hover:text-slate-900'
-							} text-slate-700 px-3 py-2 rounded-md text-sm font-medium`}>People</a
+							} text-slate-700 px-3 py-2 rounded-md text-sm font-medium`}
+							data-sveltekit-preload-data>People</a
 						>
 					</div>
 				</div>
