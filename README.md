@@ -1,3 +1,3 @@
 # cat-moviedb
 
-Written with SvelteKit, tRPC, and using [TMDB API](https://www.themoviedb.org/).
+Written with SvelteKit, TailwindCSS, and using [TMDB API](https://www.themoviedb.org/).
